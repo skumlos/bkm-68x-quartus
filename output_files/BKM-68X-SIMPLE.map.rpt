@@ -1,0 +1,674 @@
+Analysis & Synthesis report for BKM-68X-SIMPLE
+Fri May 14 13:17:14 2021
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |top|monitor_interface:bkm68x_if|v_state
+  9. State Machine - |top|monitor_interface:bkm68x_if|i_state
+ 10. State Machine - |top|monitor_interface:bkm68x_if|state
+ 11. State Machine - |top|monitor_interface:bkm68x_if|p_state
+ 12. State Machine - |top|monitor_interface:bkm68x_if|init_phase
+ 13. State Machine - |top|monitor_interface:bkm68x_if|init_reg_41
+ 14. State Machine - |top|video_format_detector:vf_det|vsync_frq
+ 15. Registers Removed During Synthesis
+ 16. Removed Registers Triggering Further Register Optimizations
+ 17. General Register Statistics
+ 18. Inverted Register Statistics
+ 19. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 20. Parameter Settings for User Entity Instance: video_format_detector:vf_det|Clock_divider:clk25mhz
+ 21. Parameter Settings for User Entity Instance: video_format_detector:vf_det|simplefilter:vs_filter
+ 22. Parameter Settings for User Entity Instance: video_format_detector:vf_det|simplefilter:hs_filter
+ 23. Port Connectivity Checks: "monitor_interface:bkm68x_if"
+ 24. Port Connectivity Checks: "video_format_detector:vf_det"
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
+ 28. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri May 14 13:17:14 2021       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; BKM-68X-SIMPLE                              ;
+; Top-level Entity Name              ; top                                         ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 819                                         ;
+;     Total combinational functions  ; 787                                         ;
+;     Dedicated logic registers      ; 394                                         ;
+; Total registers                    ; 394                                         ;
+; Total pins                         ; 42                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M08SCE144C8G     ;                    ;
+; Top-level entity name                                            ; top                ; BKM-68X-SIMPLE     ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                            ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                              ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
+; hdl/clkdiv.v                     ; yes             ; User Verilog HDL File  ; /home/martin/BKM-68X/10M08SCE/hdl/clkdiv.v                ;         ;
+; hdl/monitor_interface2.v         ; yes             ; User Verilog HDL File  ; /home/martin/BKM-68X/10M08SCE/hdl/monitor_interface2.v    ;         ;
+; hdl/video_format_detector.v      ; yes             ; User Verilog HDL File  ; /home/martin/BKM-68X/10M08SCE/hdl/video_format_detector.v ;         ;
+; hdl/simplefilter.v               ; yes             ; User Verilog HDL File  ; /home/martin/BKM-68X/10M08SCE/hdl/simplefilter.v          ;         ;
+; hdl/heartbeat.v                  ; yes             ; User Verilog HDL File  ; /home/martin/BKM-68X/10M08SCE/hdl/heartbeat.v             ;         ;
+; hdl/top.v                        ; yes             ; User Verilog HDL File  ; /home/martin/BKM-68X/10M08SCE/hdl/top.v                   ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
+
+
++------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                ;
++---------------------------------------------+--------------+
+; Resource                                    ; Usage        ;
++---------------------------------------------+--------------+
+; Estimated Total logic elements              ; 819          ;
+;                                             ;              ;
+; Total combinational functions               ; 787          ;
+; Logic element usage by number of LUT inputs ;              ;
+;     -- 4 input functions                    ; 352          ;
+;     -- 3 input functions                    ; 76           ;
+;     -- <=2 input functions                  ; 359          ;
+;                                             ;              ;
+; Logic elements by mode                      ;              ;
+;     -- normal mode                          ; 561          ;
+;     -- arithmetic mode                      ; 226          ;
+;                                             ;              ;
+; Total registers                             ; 394          ;
+;     -- Dedicated logic registers            ; 394          ;
+;     -- I/O registers                        ; 0            ;
+;                                             ;              ;
+; I/O pins                                    ; 42           ;
+;                                             ;              ;
+; Embedded Multiplier 9-bit elements          ; 0            ;
+;                                             ;              ;
+; Maximum fan-out node                        ; clk_in~input ;
+; Maximum fan-out                             ; 149          ;
+; Total fan-out                               ; 3628         ;
+; Average fan-out                             ; 2.87         ;
++---------------------------------------------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                      ;
++-----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------+-----------------------+--------------+
+; Compilation Hierarchy Node        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                      ; Entity Name           ; Library Name ;
++-----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------+-----------------------+--------------+
+; |top                              ; 787 (2)             ; 394 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 42   ; 0            ; 0          ; |top                                                     ; top                   ; work         ;
+;    |heartbeat:hb|                 ; 45 (45)             ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|heartbeat:hb                                        ; heartbeat             ; work         ;
+;    |monitor_interface:bkm68x_if|  ; 442 (442)           ; 160 (160)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|monitor_interface:bkm68x_if                         ; monitor_interface     ; work         ;
+;    |video_format_detector:vf_det| ; 298 (172)           ; 202 (107)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|video_format_detector:vf_det                        ; video_format_detector ; work         ;
+;       |Clock_divider:clk25mhz|    ; 38 (38)             ; 29 (29)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|video_format_detector:vf_det|Clock_divider:clk25mhz ; Clock_divider         ; work         ;
+;       |simplefilter:hs_filter|    ; 44 (44)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|video_format_detector:vf_det|simplefilter:hs_filter ; simplefilter          ; work         ;
+;       |simplefilter:vs_filter|    ; 44 (44)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|video_format_detector:vf_det|simplefilter:vs_filter ; simplefilter          ; work         ;
++-----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------+-----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------+
+; State Machine - |top|monitor_interface:bkm68x_if|v_state ;
++----------------+-----------------------------------------+
+; Name           ; v_state.v_data                          ;
++----------------+-----------------------------------------+
+; v_state.v_reg  ; 0                                       ;
+; v_state.v_data ; 1                                       ;
++----------------+-----------------------------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------+
+; State Machine - |top|monitor_interface:bkm68x_if|i_state ;
++-------------------+--------------------------------------+
+; Name              ; i_state.work_data                    ;
++-------------------+--------------------------------------+
+; i_state.work_reg  ; 0                                    ;
+; i_state.work_data ; 1                                    ;
++-------------------+--------------------------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top|monitor_interface:bkm68x_if|state                                                                                                               ;
++-------------------+-----------------+----------------+---------------+------------+-----------------+-------------+--------------+---------------+-------------------+
+; Name              ; state.s_get_reg ; state.s_serial ; state.s_video ; state.s_id ; state.s_prepare ; state.s_irq ; state.s_init ; state.s_undef ; state.s_wait_next ;
++-------------------+-----------------+----------------+---------------+------------+-----------------+-------------+--------------+---------------+-------------------+
+; state.s_undef     ; 0               ; 0              ; 0             ; 0          ; 0               ; 0           ; 0            ; 0             ; 0                 ;
+; state.s_init      ; 0               ; 0              ; 0             ; 0          ; 0               ; 0           ; 1            ; 1             ; 0                 ;
+; state.s_irq       ; 0               ; 0              ; 0             ; 0          ; 0               ; 1           ; 0            ; 1             ; 0                 ;
+; state.s_prepare   ; 0               ; 0              ; 0             ; 0          ; 1               ; 0           ; 0            ; 1             ; 0                 ;
+; state.s_id        ; 0               ; 0              ; 0             ; 1          ; 0               ; 0           ; 0            ; 1             ; 0                 ;
+; state.s_video     ; 0               ; 0              ; 1             ; 0          ; 0               ; 0           ; 0            ; 1             ; 0                 ;
+; state.s_serial    ; 0               ; 1              ; 0             ; 0          ; 0               ; 0           ; 0            ; 1             ; 0                 ;
+; state.s_get_reg   ; 1               ; 0              ; 0             ; 0          ; 0               ; 0           ; 0            ; 1             ; 0                 ;
+; state.s_wait_next ; 0               ; 0              ; 0             ; 0          ; 0               ; 0           ; 0            ; 1             ; 1                 ;
++-------------------+-----------------+----------------+---------------+------------+-----------------+-------------+--------------+---------------+-------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------+
+; State Machine - |top|monitor_interface:bkm68x_if|p_state ;
++-------------------+--------------------------------------+
+; Name              ; p_state.prep_data                    ;
++-------------------+--------------------------------------+
+; p_state.prep_reg  ; 0                                    ;
+; p_state.prep_data ; 1                                    ;
++-------------------+--------------------------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------+
+; State Machine - |top|monitor_interface:bkm68x_if|init_phase                             ;
++-----------------+-----------------+-----------------+-----------------+-----------------+
+; Name            ; init_phase.0011 ; init_phase.0010 ; init_phase.0001 ; init_phase.0000 ;
++-----------------+-----------------+-----------------+-----------------+-----------------+
+; init_phase.0000 ; 0               ; 0               ; 0               ; 0               ;
+; init_phase.0001 ; 0               ; 0               ; 1               ; 1               ;
+; init_phase.0010 ; 0               ; 1               ; 0               ; 1               ;
+; init_phase.0011 ; 1               ; 0               ; 0               ; 1               ;
++-----------------+-----------------+-----------------+-----------------+-----------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top|monitor_interface:bkm68x_if|init_reg_41                                                                            ;
++----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+
+; Name                 ; init_reg_41.11111111 ; init_reg_41.11011111 ; init_reg_41.11101111 ; init_reg_41.11111011 ; init_reg_41.11111101 ;
++----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+
+; init_reg_41.11011111 ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ;
+; init_reg_41.11101111 ; 0                    ; 1                    ; 1                    ; 0                    ; 0                    ;
+; init_reg_41.11111011 ; 0                    ; 1                    ; 0                    ; 1                    ; 0                    ;
+; init_reg_41.11111101 ; 0                    ; 1                    ; 0                    ; 0                    ; 1                    ;
+; init_reg_41.11111111 ; 1                    ; 1                    ; 0                    ; 0                    ; 0                    ;
++----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top|video_format_detector:vf_det|vsync_frq                                                                                                                       ;
++--------------------------------------------+--------------------------------------------+--------------------------------------------+--------------------------------------------+
+; Name                                       ; vsync_frq.00000000000000000000000000000000 ; vsync_frq.00000000000000000000000000111100 ; vsync_frq.00000000000000000000000000110010 ;
++--------------------------------------------+--------------------------------------------+--------------------------------------------+--------------------------------------------+
+; vsync_frq.00000000000000000000000000000000 ; 0                                          ; 0                                          ; 0                                          ;
+; vsync_frq.00000000000000000000000000110010 ; 1                                          ; 0                                          ; 1                                          ;
+; vsync_frq.00000000000000000000000000111100 ; 1                                          ; 1                                          ; 0                                          ;
++--------------------------------------------+--------------------------------------------+--------------------------------------------+--------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                             ;
++-------------------------------------------------------------------------+------------------------------------------------------+
+; Register name                                                           ; Reason for Removal                                   ;
++-------------------------------------------------------------------------+------------------------------------------------------+
+; video_format_detector:vf_det|reg_format[5..7]                           ; Stuck at GND due to stuck port data_in               ;
+; monitor_interface:bkm68x_if|reg_video_format[5..7]                      ; Stuck at GND due to stuck port data_in               ;
+; monitor_interface:bkm68x_if|clk_count[25]                               ; Merged with heartbeat:hb|clk_count[25]               ;
+; monitor_interface:bkm68x_if|clk_count[23]                               ; Merged with heartbeat:hb|clk_count[23]               ;
+; monitor_interface:bkm68x_if|clk_count[22]                               ; Merged with heartbeat:hb|clk_count[22]               ;
+; monitor_interface:bkm68x_if|clk_count[21]                               ; Merged with heartbeat:hb|clk_count[21]               ;
+; monitor_interface:bkm68x_if|clk_count[20]                               ; Merged with heartbeat:hb|clk_count[20]               ;
+; monitor_interface:bkm68x_if|clk_count[19]                               ; Merged with heartbeat:hb|clk_count[19]               ;
+; monitor_interface:bkm68x_if|clk_count[17]                               ; Merged with heartbeat:hb|clk_count[17]               ;
+; monitor_interface:bkm68x_if|clk_count[15]                               ; Merged with heartbeat:hb|clk_count[15]               ;
+; monitor_interface:bkm68x_if|clk_count[14]                               ; Merged with heartbeat:hb|clk_count[14]               ;
+; monitor_interface:bkm68x_if|clk_count[13]                               ; Merged with heartbeat:hb|clk_count[13]               ;
+; monitor_interface:bkm68x_if|clk_count[12]                               ; Merged with heartbeat:hb|clk_count[12]               ;
+; monitor_interface:bkm68x_if|clk_count[7]                                ; Merged with heartbeat:hb|clk_count[7]                ;
+; monitor_interface:bkm68x_if|clk_count[31]                               ; Merged with heartbeat:hb|clk_count[31]               ;
+; monitor_interface:bkm68x_if|clk_count[30]                               ; Merged with heartbeat:hb|clk_count[30]               ;
+; monitor_interface:bkm68x_if|clk_count[29]                               ; Merged with heartbeat:hb|clk_count[29]               ;
+; monitor_interface:bkm68x_if|clk_count[28]                               ; Merged with heartbeat:hb|clk_count[28]               ;
+; monitor_interface:bkm68x_if|clk_count[27]                               ; Merged with heartbeat:hb|clk_count[27]               ;
+; monitor_interface:bkm68x_if|clk_count[26]                               ; Merged with heartbeat:hb|clk_count[26]               ;
+; monitor_interface:bkm68x_if|clk_count[24]                               ; Merged with heartbeat:hb|clk_count[24]               ;
+; monitor_interface:bkm68x_if|clk_count[18]                               ; Merged with heartbeat:hb|clk_count[18]               ;
+; monitor_interface:bkm68x_if|clk_count[16]                               ; Merged with heartbeat:hb|clk_count[16]               ;
+; monitor_interface:bkm68x_if|clk_count[11]                               ; Merged with heartbeat:hb|clk_count[11]               ;
+; monitor_interface:bkm68x_if|clk_count[10]                               ; Merged with heartbeat:hb|clk_count[10]               ;
+; monitor_interface:bkm68x_if|clk_count[9]                                ; Merged with heartbeat:hb|clk_count[9]                ;
+; monitor_interface:bkm68x_if|clk_count[8]                                ; Merged with heartbeat:hb|clk_count[8]                ;
+; monitor_interface:bkm68x_if|clk_count[6]                                ; Merged with heartbeat:hb|clk_count[6]                ;
+; monitor_interface:bkm68x_if|clk_count[5]                                ; Merged with heartbeat:hb|clk_count[5]                ;
+; monitor_interface:bkm68x_if|clk_count[4]                                ; Merged with heartbeat:hb|clk_count[4]                ;
+; monitor_interface:bkm68x_if|clk_count[3]                                ; Merged with heartbeat:hb|clk_count[3]                ;
+; monitor_interface:bkm68x_if|clk_count[2]                                ; Merged with heartbeat:hb|clk_count[2]                ;
+; monitor_interface:bkm68x_if|clk_count[1]                                ; Merged with heartbeat:hb|clk_count[1]                ;
+; monitor_interface:bkm68x_if|clk_count[0]                                ; Merged with heartbeat:hb|clk_count[0]                ;
+; heartbeat:hb|heartbeat                                                  ; Merged with monitor_interface:bkm68x_if|elapsed_s[0] ;
+; video_format_detector:vf_det|vsync_frq.00000000000000000000000000000000 ; Lost fanout                                          ;
+; monitor_interface:bkm68x_if|v_state~5                                   ; Lost fanout                                          ;
+; monitor_interface:bkm68x_if|v_state~6                                   ; Lost fanout                                          ;
+; monitor_interface:bkm68x_if|i_state~5                                   ; Lost fanout                                          ;
+; monitor_interface:bkm68x_if|i_state~6                                   ; Lost fanout                                          ;
+; monitor_interface:bkm68x_if|state~13                                    ; Lost fanout                                          ;
+; monitor_interface:bkm68x_if|state~14                                    ; Lost fanout                                          ;
+; monitor_interface:bkm68x_if|state~15                                    ; Lost fanout                                          ;
+; monitor_interface:bkm68x_if|p_state~5                                   ; Lost fanout                                          ;
+; monitor_interface:bkm68x_if|p_state~6                                   ; Lost fanout                                          ;
+; monitor_interface:bkm68x_if|init_phase~6                                ; Lost fanout                                          ;
+; monitor_interface:bkm68x_if|init_phase~7                                ; Lost fanout                                          ;
+; monitor_interface:bkm68x_if|init_phase~8                                ; Lost fanout                                          ;
+; monitor_interface:bkm68x_if|init_phase~9                                ; Lost fanout                                          ;
+; monitor_interface:bkm68x_if|init_reg_41~6                               ; Lost fanout                                          ;
+; monitor_interface:bkm68x_if|init_reg_41~9                               ; Lost fanout                                          ;
+; monitor_interface:bkm68x_if|init_reg_41~12                              ; Lost fanout                                          ;
+; monitor_interface:bkm68x_if|init_reg_41~13                              ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~4                                ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~7                                ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~9                                ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~10                               ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~11                               ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~12                               ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~13                               ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~14                               ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~15                               ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~16                               ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~17                               ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~18                               ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~19                               ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~20                               ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~21                               ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~22                               ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~23                               ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~24                               ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~25                               ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~26                               ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~27                               ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~28                               ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~29                               ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~30                               ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~31                               ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~32                               ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~33                               ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~34                               ; Lost fanout                                          ;
+; video_format_detector:vf_det|vsync_frq~35                               ; Lost fanout                                          ;
+; monitor_interface:bkm68x_if|init_reg_41.11111101                        ; Stuck at GND due to stuck port data_in               ;
+; monitor_interface:bkm68x_if|serial_reads[3]                             ; Stuck at GND due to stuck port data_in               ;
+; Total Number of Removed Registers = 88                                  ;                                                      ;
++-------------------------------------------------------------------------+------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                               ;
++--------------------------------------------+---------------------------+--------------------------------------------------+
+; Register name                              ; Reason for Removal        ; Registers Removed due to This Register           ;
++--------------------------------------------+---------------------------+--------------------------------------------------+
+; video_format_detector:vf_det|reg_format[7] ; Stuck at GND              ; monitor_interface:bkm68x_if|reg_video_format[5], ;
+;                                            ; due to stuck port data_in ; monitor_interface:bkm68x_if|reg_video_format[6], ;
+;                                            ;                           ; monitor_interface:bkm68x_if|reg_video_format[7]  ;
++--------------------------------------------+---------------------------+--------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 394   ;
+; Number of registers using Synchronous Clear  ; 124   ;
+; Number of registers using Synchronous Load   ; 73    ;
+; Number of registers using Asynchronous Clear ; 36    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 195   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------+
+; Inverted Register Statistics                         ;
++--------------------------------------------+---------+
+; Inverted Register                          ; Fan out ;
++--------------------------------------------+---------+
+; monitor_interface:bkm68x_if|out_data[0]    ; 2       ;
+; monitor_interface:bkm68x_if|out_data[1]    ; 7       ;
+; monitor_interface:bkm68x_if|out_data[2]    ; 7       ;
+; monitor_interface:bkm68x_if|out_data[3]    ; 2       ;
+; monitor_interface:bkm68x_if|out_data[4]    ; 6       ;
+; monitor_interface:bkm68x_if|out_data[5]    ; 6       ;
+; monitor_interface:bkm68x_if|out_data[6]    ; 6       ;
+; monitor_interface:bkm68x_if|out_data[7]    ; 7       ;
+; monitor_interface:bkm68x_if|irq_oe         ; 3       ;
+; monitor_interface:bkm68x_if|video_oe       ; 1       ;
+; monitor_interface:bkm68x_if|init_reg_40[0] ; 1       ;
+; monitor_interface:bkm68x_if|init_reg_42[0] ; 1       ;
+; monitor_interface:bkm68x_if|init_reg_43[0] ; 1       ;
+; monitor_interface:bkm68x_if|init_reg_42[1] ; 1       ;
+; monitor_interface:bkm68x_if|init_reg_40[1] ; 1       ;
+; monitor_interface:bkm68x_if|init_reg_42[2] ; 1       ;
+; monitor_interface:bkm68x_if|init_reg_43[2] ; 1       ;
+; monitor_interface:bkm68x_if|init_reg_40[2] ; 1       ;
+; monitor_interface:bkm68x_if|init_reg_40[3] ; 1       ;
+; monitor_interface:bkm68x_if|init_reg_42[3] ; 1       ;
+; monitor_interface:bkm68x_if|init_reg_43[3] ; 1       ;
+; monitor_interface:bkm68x_if|init_reg_42[4] ; 1       ;
+; monitor_interface:bkm68x_if|init_reg_43[4] ; 1       ;
+; monitor_interface:bkm68x_if|init_reg_40[4] ; 1       ;
+; monitor_interface:bkm68x_if|init_reg_42[5] ; 1       ;
+; monitor_interface:bkm68x_if|init_reg_43[5] ; 1       ;
+; monitor_interface:bkm68x_if|init_reg_40[5] ; 1       ;
+; monitor_interface:bkm68x_if|init_reg_43[6] ; 1       ;
+; monitor_interface:bkm68x_if|init_reg_42[6] ; 1       ;
+; monitor_interface:bkm68x_if|init_reg_40[6] ; 1       ;
+; monitor_interface:bkm68x_if|init_reg_43[7] ; 1       ;
+; monitor_interface:bkm68x_if|init_reg_42[7] ; 1       ;
+; monitor_interface:bkm68x_if|init_reg_40[7] ; 1       ;
+; video_format_detector:vf_det|reset_x       ; 7       ;
+; video_format_detector:vf_det|hs_firstin    ; 32      ;
+; video_format_detector:vf_det|last_hsync_in ; 1       ;
+; video_format_detector:vf_det|firstin       ; 32      ;
+; Total number of inverted registers = 37    ;         ;
++--------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|monitor_interface:bkm68x_if|prep_reg_27[5]          ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|monitor_interface:bkm68x_if|prep_reg_27_read_cnt[7] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |top|monitor_interface:bkm68x_if|reg_in[4]               ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |top|monitor_interface:bkm68x_if|prep_reg_27_read_cnt[3] ;
+; 527:1              ; 2 bits    ; 702 LEs       ; 32 LEs               ; 670 LEs                ; Yes        ; |top|monitor_interface:bkm68x_if|out_data[3]             ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|video_format_detector:vf_det|vsync_frq              ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |top|monitor_interface:bkm68x_if|Selector1               ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; No         ; |top|monitor_interface:bkm68x_if|Selector8               ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; No         ; |top|monitor_interface:bkm68x_if|Selector58              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: video_format_detector:vf_det|Clock_divider:clk25mhz ;
++----------------+------------------------------+--------------------------------------------------+
+; Parameter Name ; Value                        ; Type                                             ;
++----------------+------------------------------+--------------------------------------------------+
+; DIVISOR        ; 0000000000000000000000000010 ; Unsigned Binary                                  ;
++----------------+------------------------------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: video_format_detector:vf_det|simplefilter:vs_filter ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; FILTER_LEN     ; 50    ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: video_format_detector:vf_det|simplefilter:hs_filter ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; FILTER_LEN     ; 50    ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "monitor_interface:bkm68x_if"                                                                               ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                                  ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; apt_on ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "video_format_detector:vf_det"                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; sample_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 42                          ;
+; cycloneiii_ff         ; 394                         ;
+;     CLR               ; 18                          ;
+;     CLR SLD           ; 5                           ;
+;     ENA               ; 118                         ;
+;     ENA CLR           ; 9                           ;
+;     ENA CLR SLD       ; 4                           ;
+;     ENA SLD           ; 64                          ;
+;     SCLR              ; 124                         ;
+;     plain             ; 52                          ;
+; cycloneiii_lcell_comb ; 799                         ;
+;     arith             ; 226                         ;
+;         2 data inputs ; 225                         ;
+;         3 data inputs ; 1                           ;
+;     normal            ; 573                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 82                          ;
+;         2 data inputs ; 63                          ;
+;         3 data inputs ; 75                          ;
+;         4 data inputs ; 352                         ;
+;                       ;                             ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 3.90                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Fri May 14 13:17:00 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BKM-68X-SIMPLE -c BKM-68X-SIMPLE
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file hdl/clkdiv.v
+    Info (12023): Found entity 1: Clock_divider File: /home/martin/BKM-68X/10M08SCE/hdl/clkdiv.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file hdl/monitor_interface2.v
+    Info (12023): Found entity 1: monitor_interface File: /home/martin/BKM-68X/10M08SCE/hdl/monitor_interface2.v Line: 1
+Warning (10275): Verilog HDL Module Instantiation warning at video_format_detector.v(13): ignored dangling comma in List of Port Connections File: /home/martin/BKM-68X/10M08SCE/hdl/video_format_detector.v Line: 13
+Info (12021): Found 1 design units, including 1 entities, in source file hdl/video_format_detector.v
+    Info (12023): Found entity 1: video_format_detector File: /home/martin/BKM-68X/10M08SCE/hdl/video_format_detector.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file hdl/simplefilter.v
+    Info (12023): Found entity 1: simplefilter File: /home/martin/BKM-68X/10M08SCE/hdl/simplefilter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file hdl/heartbeat.v
+    Info (12023): Found entity 1: heartbeat File: /home/martin/BKM-68X/10M08SCE/hdl/heartbeat.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file hdl/top.v
+    Info (12023): Found entity 1: top File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at top.v(47): created implicit net for "hsync_pll_out" File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 47
+Info (12127): Elaborating entity "top" for the top level hierarchy
+Warning (10034): Output port "led3" at top.v(20) has no driver File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 20
+Warning (10034): Output port "led4" at top.v(21) has no driver File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 21
+Warning (10034): Output port "led5" at top.v(22) has no driver File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 22
+Info (12128): Elaborating entity "heartbeat" for hierarchy "heartbeat:hb" File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 41
+Info (12128): Elaborating entity "video_format_detector" for hierarchy "video_format_detector:vf_det" File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 49
+Info (12128): Elaborating entity "Clock_divider" for hierarchy "video_format_detector:vf_det|Clock_divider:clk25mhz" File: /home/martin/BKM-68X/10M08SCE/hdl/video_format_detector.v Line: 13
+Info (12128): Elaborating entity "simplefilter" for hierarchy "video_format_detector:vf_det|simplefilter:vs_filter" File: /home/martin/BKM-68X/10M08SCE/hdl/video_format_detector.v Line: 22
+Info (12128): Elaborating entity "monitor_interface" for hierarchy "monitor_interface:bkm68x_if" File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 68
+Warning (10036): Verilog HDL or VHDL warning at monitor_interface2.v(209): object "clear_irq" assigned a value but never read File: /home/martin/BKM-68X/10M08SCE/hdl/monitor_interface2.v Line: 209
+Info (10264): Verilog HDL Case Statement information at monitor_interface2.v(230): all case item expressions in this case statement are onehot File: /home/martin/BKM-68X/10M08SCE/hdl/monitor_interface2.v Line: 230
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13000): Registers with preset signals will power-up high File: /home/martin/BKM-68X/10M08SCE/hdl/monitor_interface2.v Line: 25
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "led3" is stuck at GND File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 20
+    Warning (13410): Pin "led4" is stuck at GND File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 21
+    Warning (13410): Pin "led5" is stuck at GND File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 22
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 47 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "back_button1" File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 23
+    Warning (15610): No output dependent on input pin "back_button2" File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 24
+    Warning (15610): No output dependent on input pin "dip1" File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 25
+    Warning (15610): No output dependent on input pin "dip2" File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 26
+Info (21057): Implemented 862 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 20 input pins
+    Info (21059): Implemented 22 output pins
+    Info (21061): Implemented 820 logic cells
+Info (144001): Generated suppressed messages file /home/martin/BKM-68X/10M08SCE/output_files/BKM-68X-SIMPLE.map.smsg
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
+    Info: Peak virtual memory: 929 megabytes
+    Info: Processing ended: Fri May 14 13:17:14 2021
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:32
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /home/martin/BKM-68X/10M08SCE/output_files/BKM-68X-SIMPLE.map.smsg.
+
+

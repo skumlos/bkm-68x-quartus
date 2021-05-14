@@ -1,0 +1,3 @@
+[submodule "hdl"]
+	path = hdl
+	url = git@github.com:skumlos/bkm-68x-fpga.git

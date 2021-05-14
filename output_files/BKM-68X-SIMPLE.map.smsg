@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at monitor_interface2.v(269): always construct contains both blocking and non-blocking assignments File: /home/martin/BKM-68X/10M08SCE/hdl/monitor_interface2.v Line: 269
