@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Fri May 14 13:17:14 2021
+Analysis & Synthesis Status : Successful - Tue Jun 29 22:57:19 2021
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : BKM-68X-SIMPLE
 Top-level Entity Name : top
 Family : MAX 10
-Total logic elements : 819
-    Total combinational functions : 787
-    Dedicated logic registers : 394
-Total registers : 394
+Total logic elements : 1,243
+    Total combinational functions : 1,209
+    Dedicated logic registers : 722
+Total registers : 722
 Total pins : 42
 Total virtual pins : 0
 Total memory bits : 0

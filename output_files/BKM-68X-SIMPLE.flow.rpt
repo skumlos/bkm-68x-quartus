@@ -1,5 +1,5 @@
 Flow report for BKM-68X-SIMPLE
-Fri May 14 13:17:31 2021
+Tue Jun 29 22:57:39 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri May 14 13:17:31 2021       ;
+; Flow Status                        ; Successful - Tue Jun 29 22:57:39 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; BKM-68X-SIMPLE                              ;
 ; Top-level Entity Name              ; top                                         ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M08SCE144C8G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 806 / 8,064 ( 10 % )                        ;
-;     Total combinational functions  ; 788 / 8,064 ( 10 % )                        ;
-;     Dedicated logic registers      ; 392 / 8,064 ( 5 % )                         ;
-; Total registers                    ; 399                                         ;
+; Total logic elements               ; 1,235 / 8,064 ( 15 % )                      ;
+;     Total combinational functions  ; 1,211 / 8,064 ( 15 % )                      ;
+;     Dedicated logic registers      ; 722 / 8,064 ( 9 % )                         ;
+; Total registers                    ; 726                                         ;
 ; Total pins                         ; 42 / 101 ( 42 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 387,072 ( 0 % )                         ;
@@ -66,7 +66,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/14/2021 13:17:00 ;
+; Start date & time ; 06/29/2021 22:57:03 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; BKM-68X-SIMPLE      ;
 +-------------------+---------------------+
@@ -77,7 +77,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+----------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value  ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+----------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 175965613328.162099102033812           ; --             ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 175965613328.162500022314572           ; --             ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --             ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>         ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --             ; --          ; eda_simulation ;
@@ -100,13 +100,13 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 881 MB              ; 00:00:32                           ;
-; Fitter               ; 00:00:08     ; 1.1                     ; 1290 MB             ; 00:00:10                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 789 MB              ; 00:00:01                           ;
-; Power Analyzer       ; 00:00:02     ; 1.2                     ; 1172 MB             ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.2                     ; 799 MB              ; 00:00:03                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1033 MB             ; 00:00:01                           ;
-; Total                ; 00:00:29     ; --                      ; --                  ; 00:00:49                           ;
+; Analysis & Synthesis ; 00:00:16     ; 1.0                     ; 885 MB              ; 00:00:34                           ;
+; Fitter               ; 00:00:11     ; 1.1                     ; 1282 MB             ; 00:00:14                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 798 MB              ; 00:00:01                           ;
+; Power Analyzer       ; 00:00:03     ; 1.2                     ; 1174 MB             ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.2                     ; 805 MB              ; 00:00:03                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 1038 MB             ; 00:00:01                           ;
+; Total                ; 00:00:34     ; --                      ; --                  ; 00:00:56                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BKM-68X-SIMPLE
-Fri May 14 13:17:14 2021
+Tue Jun 29 22:57:19 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -25,15 +25,17 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  17. General Register Statistics
  18. Inverted Register Statistics
  19. Multiplexer Restructuring Statistics (Restructuring Performed)
- 20. Parameter Settings for User Entity Instance: video_format_detector:vf_det|Clock_divider:clk25mhz
- 21. Parameter Settings for User Entity Instance: video_format_detector:vf_det|simplefilter:vs_filter
- 22. Parameter Settings for User Entity Instance: video_format_detector:vf_det|simplefilter:hs_filter
- 23. Port Connectivity Checks: "monitor_interface:bkm68x_if"
- 24. Port Connectivity Checks: "video_format_detector:vf_det"
- 25. Post-Synthesis Netlist Statistics for Top Partition
- 26. Elapsed Time Per Partition
- 27. Analysis & Synthesis Messages
- 28. Analysis & Synthesis Suppressed Messages
+ 20. Parameter Settings for User Entity Instance: simplefilter:button1_filter
+ 21. Parameter Settings for User Entity Instance: simplefilter:button2_filter
+ 22. Parameter Settings for User Entity Instance: video_format_detector:vf_det|Clock_divider:clk25mhz
+ 23. Parameter Settings for User Entity Instance: video_format_detector:vf_det|simplefilter:vs_filter
+ 24. Parameter Settings for User Entity Instance: video_format_detector:vf_det|simplefilter:hs_filter
+ 25. Port Connectivity Checks: "monitor_interface:bkm68x_if"
+ 26. Port Connectivity Checks: "video_format_detector:vf_det"
+ 27. Port Connectivity Checks: "heartbeat:hb"
+ 28. Post-Synthesis Netlist Statistics for Top Partition
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
 
 
 
@@ -59,15 +61,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri May 14 13:17:14 2021       ;
+; Analysis & Synthesis Status        ; Successful - Tue Jun 29 22:57:19 2021       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; BKM-68X-SIMPLE                              ;
 ; Top-level Entity Name              ; top                                         ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 819                                         ;
-;     Total combinational functions  ; 787                                         ;
-;     Dedicated logic registers      ; 394                                         ;
-; Total registers                    ; 394                                         ;
+; Total logic elements               ; 1,243                                       ;
+;     Total combinational functions  ; 1,209                                       ;
+;     Dedicated logic registers      ; 722                                         ;
+; Total registers                    ; 722                                         ;
 ; Total pins                         ; 42                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -186,6 +188,7 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                              ; Library ;
 +----------------------------------+-----------------+------------------------+-----------------------------------------------------------+---------+
+; hdl/polarity_detector.v          ; yes             ; User Verilog HDL File  ; /home/martin/BKM-68X/10M08SCE/hdl/polarity_detector.v     ;         ;
 ; hdl/clkdiv.v                     ; yes             ; User Verilog HDL File  ; /home/martin/BKM-68X/10M08SCE/hdl/clkdiv.v                ;         ;
 ; hdl/monitor_interface2.v         ; yes             ; User Verilog HDL File  ; /home/martin/BKM-68X/10M08SCE/hdl/monitor_interface2.v    ;         ;
 ; hdl/video_format_detector.v      ; yes             ; User Verilog HDL File  ; /home/martin/BKM-68X/10M08SCE/hdl/video_format_detector.v ;         ;
@@ -200,20 +203,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 819          ;
+; Estimated Total logic elements              ; 1,243        ;
 ;                                             ;              ;
-; Total combinational functions               ; 787          ;
+; Total combinational functions               ; 1209         ;
 ; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 352          ;
-;     -- 3 input functions                    ; 76           ;
-;     -- <=2 input functions                  ; 359          ;
+;     -- 4 input functions                    ; 499          ;
+;     -- 3 input functions                    ; 152          ;
+;     -- <=2 input functions                  ; 558          ;
 ;                                             ;              ;
 ; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 561          ;
-;     -- arithmetic mode                      ; 226          ;
+;     -- normal mode                          ; 735          ;
+;     -- arithmetic mode                      ; 474          ;
 ;                                             ;              ;
-; Total registers                             ; 394          ;
-;     -- Dedicated logic registers            ; 394          ;
+; Total registers                             ; 722          ;
+;     -- Dedicated logic registers            ; 722          ;
 ;     -- I/O registers                        ; 0            ;
 ;                                             ;              ;
 ; I/O pins                                    ; 42           ;
@@ -221,25 +224,28 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0            ;
 ;                                             ;              ;
 ; Maximum fan-out node                        ; clk_in~input ;
-; Maximum fan-out                             ; 149          ;
-; Total fan-out                               ; 3628         ;
-; Average fan-out                             ; 2.87         ;
+; Maximum fan-out                             ; 475          ;
+; Total fan-out                               ; 5810         ;
+; Average fan-out                             ; 2.88         ;
 +---------------------------------------------+--------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                      ;
-+-----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------+-----------------------+--------------+
-; Compilation Hierarchy Node        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                      ; Entity Name           ; Library Name ;
-+-----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------+-----------------------+--------------+
-; |top                              ; 787 (2)             ; 394 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 42   ; 0            ; 0          ; |top                                                     ; top                   ; work         ;
-;    |heartbeat:hb|                 ; 45 (45)             ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|heartbeat:hb                                        ; heartbeat             ; work         ;
-;    |monitor_interface:bkm68x_if|  ; 442 (442)           ; 160 (160)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|monitor_interface:bkm68x_if                         ; monitor_interface     ; work         ;
-;    |video_format_detector:vf_det| ; 298 (172)           ; 202 (107)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|video_format_detector:vf_det                        ; video_format_detector ; work         ;
-;       |Clock_divider:clk25mhz|    ; 38 (38)             ; 29 (29)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|video_format_detector:vf_det|Clock_divider:clk25mhz ; Clock_divider         ; work         ;
-;       |simplefilter:hs_filter|    ; 44 (44)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|video_format_detector:vf_det|simplefilter:hs_filter ; simplefilter          ; work         ;
-;       |simplefilter:vs_filter|    ; 44 (44)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|video_format_detector:vf_det|simplefilter:vs_filter ; simplefilter          ; work         ;
-+-----------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------+-----------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                   ;
++------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------+-----------------------+--------------+
+; Compilation Hierarchy Node                     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                      ; Entity Name           ; Library Name ;
++------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------+-----------------------+--------------+
+; |top                                           ; 1209 (8)            ; 722 (2)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 42   ; 0            ; 0          ; |top                                                     ; top                   ; work         ;
+;    |monitor_interface:bkm68x_if|               ; 495 (495)           ; 192 (192)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|monitor_interface:bkm68x_if                         ; monitor_interface     ; work         ;
+;    |polarity_detector:hsync_polarity_detector| ; 160 (160)           ; 130 (130)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|polarity_detector:hsync_polarity_detector           ; polarity_detector     ; work         ;
+;    |polarity_detector:vsync_polarity_detector| ; 160 (160)           ; 130 (130)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|polarity_detector:vsync_polarity_detector           ; polarity_detector     ; work         ;
+;    |simplefilter:button1_filter|               ; 43 (43)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|simplefilter:button1_filter                         ; simplefilter          ; work         ;
+;    |simplefilter:button2_filter|               ; 43 (43)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|simplefilter:button2_filter                         ; simplefilter          ; work         ;
+;    |video_format_detector:vf_det|              ; 300 (174)           ; 202 (107)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|video_format_detector:vf_det                        ; video_format_detector ; work         ;
+;       |Clock_divider:clk25mhz|                 ; 38 (38)             ; 29 (29)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|video_format_detector:vf_det|Clock_divider:clk25mhz ; Clock_divider         ; work         ;
+;       |simplefilter:hs_filter|                 ; 44 (44)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|video_format_detector:vf_det|simplefilter:hs_filter ; simplefilter          ; work         ;
+;       |simplefilter:vs_filter|                 ; 44 (44)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|video_format_detector:vf_det|simplefilter:vs_filter ; simplefilter          ; work         ;
++------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------+-----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -333,97 +339,64 @@ Encoding Type:  One-Hot
 +--------------------------------------------+--------------------------------------------+--------------------------------------------+--------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                             ;
-+-------------------------------------------------------------------------+------------------------------------------------------+
-; Register name                                                           ; Reason for Removal                                   ;
-+-------------------------------------------------------------------------+------------------------------------------------------+
-; video_format_detector:vf_det|reg_format[5..7]                           ; Stuck at GND due to stuck port data_in               ;
-; monitor_interface:bkm68x_if|reg_video_format[5..7]                      ; Stuck at GND due to stuck port data_in               ;
-; monitor_interface:bkm68x_if|clk_count[25]                               ; Merged with heartbeat:hb|clk_count[25]               ;
-; monitor_interface:bkm68x_if|clk_count[23]                               ; Merged with heartbeat:hb|clk_count[23]               ;
-; monitor_interface:bkm68x_if|clk_count[22]                               ; Merged with heartbeat:hb|clk_count[22]               ;
-; monitor_interface:bkm68x_if|clk_count[21]                               ; Merged with heartbeat:hb|clk_count[21]               ;
-; monitor_interface:bkm68x_if|clk_count[20]                               ; Merged with heartbeat:hb|clk_count[20]               ;
-; monitor_interface:bkm68x_if|clk_count[19]                               ; Merged with heartbeat:hb|clk_count[19]               ;
-; monitor_interface:bkm68x_if|clk_count[17]                               ; Merged with heartbeat:hb|clk_count[17]               ;
-; monitor_interface:bkm68x_if|clk_count[15]                               ; Merged with heartbeat:hb|clk_count[15]               ;
-; monitor_interface:bkm68x_if|clk_count[14]                               ; Merged with heartbeat:hb|clk_count[14]               ;
-; monitor_interface:bkm68x_if|clk_count[13]                               ; Merged with heartbeat:hb|clk_count[13]               ;
-; monitor_interface:bkm68x_if|clk_count[12]                               ; Merged with heartbeat:hb|clk_count[12]               ;
-; monitor_interface:bkm68x_if|clk_count[7]                                ; Merged with heartbeat:hb|clk_count[7]                ;
-; monitor_interface:bkm68x_if|clk_count[31]                               ; Merged with heartbeat:hb|clk_count[31]               ;
-; monitor_interface:bkm68x_if|clk_count[30]                               ; Merged with heartbeat:hb|clk_count[30]               ;
-; monitor_interface:bkm68x_if|clk_count[29]                               ; Merged with heartbeat:hb|clk_count[29]               ;
-; monitor_interface:bkm68x_if|clk_count[28]                               ; Merged with heartbeat:hb|clk_count[28]               ;
-; monitor_interface:bkm68x_if|clk_count[27]                               ; Merged with heartbeat:hb|clk_count[27]               ;
-; monitor_interface:bkm68x_if|clk_count[26]                               ; Merged with heartbeat:hb|clk_count[26]               ;
-; monitor_interface:bkm68x_if|clk_count[24]                               ; Merged with heartbeat:hb|clk_count[24]               ;
-; monitor_interface:bkm68x_if|clk_count[18]                               ; Merged with heartbeat:hb|clk_count[18]               ;
-; monitor_interface:bkm68x_if|clk_count[16]                               ; Merged with heartbeat:hb|clk_count[16]               ;
-; monitor_interface:bkm68x_if|clk_count[11]                               ; Merged with heartbeat:hb|clk_count[11]               ;
-; monitor_interface:bkm68x_if|clk_count[10]                               ; Merged with heartbeat:hb|clk_count[10]               ;
-; monitor_interface:bkm68x_if|clk_count[9]                                ; Merged with heartbeat:hb|clk_count[9]                ;
-; monitor_interface:bkm68x_if|clk_count[8]                                ; Merged with heartbeat:hb|clk_count[8]                ;
-; monitor_interface:bkm68x_if|clk_count[6]                                ; Merged with heartbeat:hb|clk_count[6]                ;
-; monitor_interface:bkm68x_if|clk_count[5]                                ; Merged with heartbeat:hb|clk_count[5]                ;
-; monitor_interface:bkm68x_if|clk_count[4]                                ; Merged with heartbeat:hb|clk_count[4]                ;
-; monitor_interface:bkm68x_if|clk_count[3]                                ; Merged with heartbeat:hb|clk_count[3]                ;
-; monitor_interface:bkm68x_if|clk_count[2]                                ; Merged with heartbeat:hb|clk_count[2]                ;
-; monitor_interface:bkm68x_if|clk_count[1]                                ; Merged with heartbeat:hb|clk_count[1]                ;
-; monitor_interface:bkm68x_if|clk_count[0]                                ; Merged with heartbeat:hb|clk_count[0]                ;
-; heartbeat:hb|heartbeat                                                  ; Merged with monitor_interface:bkm68x_if|elapsed_s[0] ;
-; video_format_detector:vf_det|vsync_frq.00000000000000000000000000000000 ; Lost fanout                                          ;
-; monitor_interface:bkm68x_if|v_state~5                                   ; Lost fanout                                          ;
-; monitor_interface:bkm68x_if|v_state~6                                   ; Lost fanout                                          ;
-; monitor_interface:bkm68x_if|i_state~5                                   ; Lost fanout                                          ;
-; monitor_interface:bkm68x_if|i_state~6                                   ; Lost fanout                                          ;
-; monitor_interface:bkm68x_if|state~13                                    ; Lost fanout                                          ;
-; monitor_interface:bkm68x_if|state~14                                    ; Lost fanout                                          ;
-; monitor_interface:bkm68x_if|state~15                                    ; Lost fanout                                          ;
-; monitor_interface:bkm68x_if|p_state~5                                   ; Lost fanout                                          ;
-; monitor_interface:bkm68x_if|p_state~6                                   ; Lost fanout                                          ;
-; monitor_interface:bkm68x_if|init_phase~6                                ; Lost fanout                                          ;
-; monitor_interface:bkm68x_if|init_phase~7                                ; Lost fanout                                          ;
-; monitor_interface:bkm68x_if|init_phase~8                                ; Lost fanout                                          ;
-; monitor_interface:bkm68x_if|init_phase~9                                ; Lost fanout                                          ;
-; monitor_interface:bkm68x_if|init_reg_41~6                               ; Lost fanout                                          ;
-; monitor_interface:bkm68x_if|init_reg_41~9                               ; Lost fanout                                          ;
-; monitor_interface:bkm68x_if|init_reg_41~12                              ; Lost fanout                                          ;
-; monitor_interface:bkm68x_if|init_reg_41~13                              ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~4                                ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~7                                ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~9                                ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~10                               ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~11                               ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~12                               ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~13                               ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~14                               ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~15                               ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~16                               ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~17                               ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~18                               ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~19                               ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~20                               ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~21                               ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~22                               ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~23                               ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~24                               ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~25                               ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~26                               ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~27                               ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~28                               ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~29                               ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~30                               ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~31                               ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~32                               ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~33                               ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~34                               ; Lost fanout                                          ;
-; video_format_detector:vf_det|vsync_frq~35                               ; Lost fanout                                          ;
-; monitor_interface:bkm68x_if|init_reg_41.11111101                        ; Stuck at GND due to stuck port data_in               ;
-; monitor_interface:bkm68x_if|serial_reads[3]                             ; Stuck at GND due to stuck port data_in               ;
-; Total Number of Removed Registers = 88                                  ;                                                      ;
-+-------------------------------------------------------------------------+------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                               ;
++-------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                           ; Reason for Removal                     ;
++-------------------------------------------------------------------------+----------------------------------------+
+; video_format_detector:vf_det|reg_format[5..7]                           ; Stuck at GND due to stuck port data_in ;
+; monitor_interface:bkm68x_if|reg_video_format[5..7]                      ; Stuck at GND due to stuck port data_in ;
+; video_format_detector:vf_det|vsync_frq.00000000000000000000000000000000 ; Lost fanout                            ;
+; monitor_interface:bkm68x_if|v_state~5                                   ; Lost fanout                            ;
+; monitor_interface:bkm68x_if|v_state~6                                   ; Lost fanout                            ;
+; monitor_interface:bkm68x_if|i_state~5                                   ; Lost fanout                            ;
+; monitor_interface:bkm68x_if|i_state~6                                   ; Lost fanout                            ;
+; monitor_interface:bkm68x_if|state~13                                    ; Lost fanout                            ;
+; monitor_interface:bkm68x_if|state~14                                    ; Lost fanout                            ;
+; monitor_interface:bkm68x_if|state~15                                    ; Lost fanout                            ;
+; monitor_interface:bkm68x_if|p_state~5                                   ; Lost fanout                            ;
+; monitor_interface:bkm68x_if|p_state~6                                   ; Lost fanout                            ;
+; monitor_interface:bkm68x_if|init_phase~6                                ; Lost fanout                            ;
+; monitor_interface:bkm68x_if|init_phase~7                                ; Lost fanout                            ;
+; monitor_interface:bkm68x_if|init_phase~8                                ; Lost fanout                            ;
+; monitor_interface:bkm68x_if|init_phase~9                                ; Lost fanout                            ;
+; monitor_interface:bkm68x_if|init_reg_41~6                               ; Lost fanout                            ;
+; monitor_interface:bkm68x_if|init_reg_41~9                               ; Lost fanout                            ;
+; monitor_interface:bkm68x_if|init_reg_41~12                              ; Lost fanout                            ;
+; monitor_interface:bkm68x_if|init_reg_41~13                              ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~4                                ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~7                                ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~9                                ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~10                               ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~11                               ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~12                               ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~13                               ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~14                               ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~15                               ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~16                               ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~17                               ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~18                               ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~19                               ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~20                               ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~21                               ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~22                               ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~23                               ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~24                               ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~25                               ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~26                               ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~27                               ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~28                               ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~29                               ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~30                               ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~31                               ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~32                               ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~33                               ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~34                               ; Lost fanout                            ;
+; video_format_detector:vf_det|vsync_frq~35                               ; Lost fanout                            ;
+; monitor_interface:bkm68x_if|init_reg_41.11111101                        ; Stuck at GND due to stuck port data_in ;
+; monitor_interface:bkm68x_if|serial_reads[3]                             ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 55                                  ;                                        ;
++-------------------------------------------------------------------------+----------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -442,12 +415,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 394   ;
-; Number of registers using Synchronous Clear  ; 124   ;
+; Total registers                              ; 722   ;
+; Number of registers using Synchronous Clear  ; 316   ;
 ; Number of registers using Synchronous Load   ; 73    ;
 ; Number of registers using Asynchronous Clear ; 36    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 195   ;
+; Number of registers using Clock Enable       ; 323   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -466,6 +439,7 @@ Encoding Type:  One-Hot
 ; monitor_interface:bkm68x_if|out_data[6]    ; 6       ;
 ; monitor_interface:bkm68x_if|out_data[7]    ; 7       ;
 ; monitor_interface:bkm68x_if|irq_oe         ; 3       ;
+; int_ext_x_forced                           ; 2       ;
 ; monitor_interface:bkm68x_if|video_oe       ; 1       ;
 ; monitor_interface:bkm68x_if|init_reg_40[0] ; 1       ;
 ; monitor_interface:bkm68x_if|init_reg_42[0] ; 1       ;
@@ -494,25 +468,49 @@ Encoding Type:  One-Hot
 ; video_format_detector:vf_det|hs_firstin    ; 32      ;
 ; video_format_detector:vf_det|last_hsync_in ; 1       ;
 ; video_format_detector:vf_det|firstin       ; 32      ;
-; Total number of inverted registers = 37    ;         ;
+; Total number of inverted registers = 38    ;         ;
 +--------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|monitor_interface:bkm68x_if|prep_reg_27[5]          ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|monitor_interface:bkm68x_if|prep_reg_27_read_cnt[7] ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |top|monitor_interface:bkm68x_if|reg_in[4]               ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |top|monitor_interface:bkm68x_if|prep_reg_27_read_cnt[3] ;
-; 527:1              ; 2 bits    ; 702 LEs       ; 32 LEs               ; 670 LEs                ; Yes        ; |top|monitor_interface:bkm68x_if|out_data[3]             ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|video_format_detector:vf_det|vsync_frq              ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |top|monitor_interface:bkm68x_if|Selector1               ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; No         ; |top|monitor_interface:bkm68x_if|Selector8               ;
-; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; No         ; |top|monitor_interface:bkm68x_if|Selector58              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|monitor_interface:bkm68x_if|prep_reg_27[6]            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|monitor_interface:bkm68x_if|prep_reg_27_read_cnt[7]   ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|polarity_detector:vsync_polarity_detector|cnt_pos[29] ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|polarity_detector:vsync_polarity_detector|cnt_neg[15] ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|polarity_detector:hsync_polarity_detector|cnt_pos[21] ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|polarity_detector:hsync_polarity_detector|cnt_neg[31] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |top|monitor_interface:bkm68x_if|reg_in[5]                 ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |top|monitor_interface:bkm68x_if|prep_reg_27_read_cnt[3]   ;
+; 527:1              ; 2 bits    ; 702 LEs       ; 32 LEs               ; 670 LEs                ; Yes        ; |top|monitor_interface:bkm68x_if|out_data[3]               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|video_format_detector:vf_det|vsync_frq                ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |top|monitor_interface:bkm68x_if|Selector4                 ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; No         ; |top|monitor_interface:bkm68x_if|Selector8                 ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; No         ; |top|monitor_interface:bkm68x_if|Selector59                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simplefilter:button1_filter ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; FILTER_LEN     ; 20000 ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: simplefilter:button2_filter ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; FILTER_LEN     ; 20000 ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +--------------------------------------------------------------------------------------------------+
@@ -563,34 +561,44 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "heartbeat:hb"                                                                                ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; heartbeat_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 42                          ;
-; cycloneiii_ff         ; 394                         ;
+; cycloneiii_ff         ; 722                         ;
 ;     CLR               ; 18                          ;
 ;     CLR SLD           ; 5                           ;
 ;     ENA               ; 118                         ;
 ;     ENA CLR           ; 9                           ;
 ;     ENA CLR SLD       ; 4                           ;
+;     ENA SCLR          ; 128                         ;
 ;     ENA SLD           ; 64                          ;
-;     SCLR              ; 124                         ;
-;     plain             ; 52                          ;
-; cycloneiii_lcell_comb ; 799                         ;
-;     arith             ; 226                         ;
-;         2 data inputs ; 225                         ;
-;         3 data inputs ; 1                           ;
-;     normal            ; 573                         ;
+;     SCLR              ; 188                         ;
+;     plain             ; 188                         ;
+; cycloneiii_lcell_comb ; 1223                        ;
+;     arith             ; 474                         ;
+;         2 data inputs ; 411                         ;
+;         3 data inputs ; 63                          ;
+;     normal            ; 749                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 82                          ;
-;         2 data inputs ; 63                          ;
-;         3 data inputs ; 75                          ;
-;         4 data inputs ; 352                         ;
+;         1 data inputs ; 92                          ;
+;         2 data inputs ; 68                          ;
+;         3 data inputs ; 89                          ;
+;         4 data inputs ; 499                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 3.90                        ;
+; Average LUT depth     ; 3.81                        ;
 +-----------------------+-----------------------------+
 
 
@@ -609,10 +617,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri May 14 13:17:00 2021
+    Info: Processing started: Tue Jun 29 22:57:03 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BKM-68X-SIMPLE -c BKM-68X-SIMPLE
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file hdl/polarity_detector.v
+    Info (12023): Found entity 1: polarity_detector File: /home/martin/BKM-68X/10M08SCE/hdl/polarity_detector.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file hdl/clkdiv.v
     Info (12023): Found entity 1: Clock_divider File: /home/martin/BKM-68X/10M08SCE/hdl/clkdiv.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file hdl/monitor_interface2.v
@@ -626,18 +636,20 @@ Info (12021): Found 1 design units, including 1 entities, in source file hdl/hea
     Info (12023): Found entity 1: heartbeat File: /home/martin/BKM-68X/10M08SCE/hdl/heartbeat.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file hdl/top.v
     Info (12023): Found entity 1: top File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at top.v(47): created implicit net for "hsync_pll_out" File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 47
+Warning (10236): Verilog HDL Implicit Net warning at top.v(104): created implicit net for "hsync_pll_out" File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 104
 Info (12127): Elaborating entity "top" for the top level hierarchy
 Warning (10034): Output port "led3" at top.v(20) has no driver File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 20
 Warning (10034): Output port "led4" at top.v(21) has no driver File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 21
 Warning (10034): Output port "led5" at top.v(22) has no driver File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 22
-Info (12128): Elaborating entity "heartbeat" for hierarchy "heartbeat:hb" File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 41
-Info (12128): Elaborating entity "video_format_detector" for hierarchy "video_format_detector:vf_det" File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 49
+Info (12128): Elaborating entity "polarity_detector" for hierarchy "polarity_detector:vsync_polarity_detector" File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 39
+Info (12128): Elaborating entity "simplefilter" for hierarchy "simplefilter:button1_filter" File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 72
+Info (12128): Elaborating entity "heartbeat" for hierarchy "heartbeat:hb" File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 98
+Info (12128): Elaborating entity "video_format_detector" for hierarchy "video_format_detector:vf_det" File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 106
 Info (12128): Elaborating entity "Clock_divider" for hierarchy "video_format_detector:vf_det|Clock_divider:clk25mhz" File: /home/martin/BKM-68X/10M08SCE/hdl/video_format_detector.v Line: 13
 Info (12128): Elaborating entity "simplefilter" for hierarchy "video_format_detector:vf_det|simplefilter:vs_filter" File: /home/martin/BKM-68X/10M08SCE/hdl/video_format_detector.v Line: 22
-Info (12128): Elaborating entity "monitor_interface" for hierarchy "monitor_interface:bkm68x_if" File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 68
-Warning (10036): Verilog HDL or VHDL warning at monitor_interface2.v(209): object "clear_irq" assigned a value but never read File: /home/martin/BKM-68X/10M08SCE/hdl/monitor_interface2.v Line: 209
-Info (10264): Verilog HDL Case Statement information at monitor_interface2.v(230): all case item expressions in this case statement are onehot File: /home/martin/BKM-68X/10M08SCE/hdl/monitor_interface2.v Line: 230
+Info (12128): Elaborating entity "monitor_interface" for hierarchy "monitor_interface:bkm68x_if" File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 125
+Warning (10036): Verilog HDL or VHDL warning at monitor_interface2.v(221): object "clear_irq" assigned a value but never read File: /home/martin/BKM-68X/10M08SCE/hdl/monitor_interface2.v Line: 221
+Info (10264): Verilog HDL Case Statement information at monitor_interface2.v(242): all case item expressions in this case statement are onehot File: /home/martin/BKM-68X/10M08SCE/hdl/monitor_interface2.v Line: 242
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (13000): Registers with preset signals will power-up high File: /home/martin/BKM-68X/10M08SCE/hdl/monitor_interface2.v Line: 25
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
@@ -649,26 +661,17 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 47 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 4 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "back_button1" File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 23
-    Warning (15610): No output dependent on input pin "back_button2" File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 24
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "dip1" File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 25
     Warning (15610): No output dependent on input pin "dip2" File: /home/martin/BKM-68X/10M08SCE/hdl/top.v Line: 26
-Info (21057): Implemented 862 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1413 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 20 input pins
     Info (21059): Implemented 22 output pins
-    Info (21061): Implemented 820 logic cells
-Info (144001): Generated suppressed messages file /home/martin/BKM-68X/10M08SCE/output_files/BKM-68X-SIMPLE.map.smsg
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 929 megabytes
-    Info: Processing ended: Fri May 14 13:17:14 2021
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:32
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in /home/martin/BKM-68X/10M08SCE/output_files/BKM-68X-SIMPLE.map.smsg.
+    Info (21061): Implemented 1371 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
+    Info: Peak virtual memory: 934 megabytes
+    Info: Processing ended: Tue Jun 29 22:57:19 2021
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:35
 
 

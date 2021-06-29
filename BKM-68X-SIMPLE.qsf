@@ -59,14 +59,6 @@ set_global_assignment -name POWER_DEFAULT_INPUT_IO_TOGGLE_RATE "12.5 %"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VERILOG_FILE hdl/clkdiv.v
-set_global_assignment -name SDC_FILE "hdl/BKM-68X.sdc"
-set_global_assignment -name VERILOG_FILE hdl/monitor_interface2.v
-set_global_assignment -name VERILOG_FILE hdl/video_format_detector.v
-set_global_assignment -name VERILOG_FILE hdl/simplefilter.v
-set_global_assignment -name VERILOG_FILE hdl/heartbeat.v
-set_global_assignment -name VERILOG_FILE hdl/top.v
-set_global_assignment -name SOURCE_FILE "db/BKM-68X-SIMPLE.cmp.rdb"
 set_location_assignment PIN_106 -to ad_out[7]
 set_location_assignment PIN_110 -to ad_out[6]
 set_location_assignment PIN_111 -to ad_out[5]
@@ -106,4 +98,17 @@ set_location_assignment PIN_56 -to led1
 set_location_assignment PIN_57 -to led2
 set_location_assignment PIN_41 -to back_button1
 set_location_assignment PIN_43 -to back_button2
+set_instance_assignment -name IO_STANDARD "2.5 V SCHMITT TRIGGER" -to back_button1
+set_instance_assignment -name IO_STANDARD "2.5 V SCHMITT TRIGGER" -to back_button2
+set_global_assignment -name VERILOG_FILE hdl/polarity_detector.v
+set_global_assignment -name VERILOG_FILE hdl/clkdiv.v
+set_global_assignment -name SDC_FILE "hdl/BKM-68X.sdc"
+set_global_assignment -name VERILOG_FILE hdl/monitor_interface2.v
+set_global_assignment -name VERILOG_FILE hdl/video_format_detector.v
+set_global_assignment -name VERILOG_FILE hdl/simplefilter.v
+set_global_assignment -name VERILOG_FILE hdl/heartbeat.v
+set_global_assignment -name VERILOG_FILE hdl/top.v
+set_global_assignment -name SOURCE_FILE "db/BKM-68X-SIMPLE.cmp.rdb"
+set_instance_assignment -name SLEW_RATE 0 -to vsync_out
+set_instance_assignment -name SLEW_RATE 0 -to hsync_out
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
