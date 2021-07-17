@@ -25,22 +25,17 @@ ad_oe_x <= monitor_interface:bkm68x_if.data_oe_x
 irq_x <= monitor_interface:bkm68x_if.int_x
 hd_sd_x <= monitor_interface:bkm68x_if.hd_sd_x
 rgb_comp_x <= monitor_interface:bkm68x_if.rgb_comp_x
-int_ext_x <= int_ext_x.DB_MAX_OUTPUT_PORT_TYPE
-video_oe_x <= video_oe_x.DB_MAX_OUTPUT_PORT_TYPE
+int_ext_x <= monitor_interface:bkm68x_if.int_ext_x
+video_oe_x <= monitor_interface:bkm68x_if.video_oe_x
 vsync_out <= vsync_out.DB_MAX_OUTPUT_PORT_TYPE
 hsync_out <= hsync_out.DB_MAX_OUTPUT_PORT_TYPE
-led1 <= polarity_detector:vsync_polarity_detector.positive_polarity_out
-led2 <= polarity_detector:hsync_polarity_detector.positive_polarity_out
-led3 <= <GND>
-led4 <= <GND>
-led5 <= <GND>
-back_button1 => back_button1.IN1
-back_button2 => back_button2.IN1
-dip1 => ~NO_FANOUT~
-dip2 => ~NO_FANOUT~
+led1 <= led1.DB_MAX_OUTPUT_PORT_TYPE
+led2 <= monitor_interface:bkm68x_if.int_ext_x
+back_button1 => ~NO_FANOUT~
+back_button2 => ~NO_FANOUT~
 vsync_in => vsync_in.IN1
 hsync_in => hsync_in.IN1
-clk_in => clk_in.IN7
+clk_in => clk_in.IN5
 
 
 |top|polarity_detector:vsync_polarity_detector
@@ -441,84 +436,6 @@ sync_in => Mux62.IN2
 sync_in => Mux63.IN2
 sync_in => last_sync_level.DATAIN
 positive_polarity_out <= positive_polarity.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|top|simplefilter:button1_filter
-clk_50mhz_in => filter.CLK
-clk_50mhz_in => filter_cnt[0].CLK
-clk_50mhz_in => filter_cnt[1].CLK
-clk_50mhz_in => filter_cnt[2].CLK
-clk_50mhz_in => filter_cnt[3].CLK
-clk_50mhz_in => filter_cnt[4].CLK
-clk_50mhz_in => filter_cnt[5].CLK
-clk_50mhz_in => filter_cnt[6].CLK
-clk_50mhz_in => filter_cnt[7].CLK
-clk_50mhz_in => filter_cnt[8].CLK
-clk_50mhz_in => filter_cnt[9].CLK
-clk_50mhz_in => filter_cnt[10].CLK
-clk_50mhz_in => filter_cnt[11].CLK
-clk_50mhz_in => filter_cnt[12].CLK
-clk_50mhz_in => filter_cnt[13].CLK
-clk_50mhz_in => filter_cnt[14].CLK
-clk_50mhz_in => filter_cnt[15].CLK
-clk_50mhz_in => filter_cnt[16].CLK
-clk_50mhz_in => filter_cnt[17].CLK
-clk_50mhz_in => filter_cnt[18].CLK
-clk_50mhz_in => filter_cnt[19].CLK
-clk_50mhz_in => filter_cnt[20].CLK
-clk_50mhz_in => filter_cnt[21].CLK
-clk_50mhz_in => filter_cnt[22].CLK
-clk_50mhz_in => filter_cnt[23].CLK
-clk_50mhz_in => filter_cnt[24].CLK
-clk_50mhz_in => filter_cnt[25].CLK
-clk_50mhz_in => filter_cnt[26].CLK
-clk_50mhz_in => filter_cnt[27].CLK
-clk_50mhz_in => filter_cnt[28].CLK
-clk_50mhz_in => filter_cnt[29].CLK
-clk_50mhz_in => filter_cnt[30].CLK
-clk_50mhz_in => filter_cnt[31].CLK
-sig_in => always0.IN1
-sig_in => filter.DATAB
-sig_out <= filter.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|top|simplefilter:button2_filter
-clk_50mhz_in => filter.CLK
-clk_50mhz_in => filter_cnt[0].CLK
-clk_50mhz_in => filter_cnt[1].CLK
-clk_50mhz_in => filter_cnt[2].CLK
-clk_50mhz_in => filter_cnt[3].CLK
-clk_50mhz_in => filter_cnt[4].CLK
-clk_50mhz_in => filter_cnt[5].CLK
-clk_50mhz_in => filter_cnt[6].CLK
-clk_50mhz_in => filter_cnt[7].CLK
-clk_50mhz_in => filter_cnt[8].CLK
-clk_50mhz_in => filter_cnt[9].CLK
-clk_50mhz_in => filter_cnt[10].CLK
-clk_50mhz_in => filter_cnt[11].CLK
-clk_50mhz_in => filter_cnt[12].CLK
-clk_50mhz_in => filter_cnt[13].CLK
-clk_50mhz_in => filter_cnt[14].CLK
-clk_50mhz_in => filter_cnt[15].CLK
-clk_50mhz_in => filter_cnt[16].CLK
-clk_50mhz_in => filter_cnt[17].CLK
-clk_50mhz_in => filter_cnt[18].CLK
-clk_50mhz_in => filter_cnt[19].CLK
-clk_50mhz_in => filter_cnt[20].CLK
-clk_50mhz_in => filter_cnt[21].CLK
-clk_50mhz_in => filter_cnt[22].CLK
-clk_50mhz_in => filter_cnt[23].CLK
-clk_50mhz_in => filter_cnt[24].CLK
-clk_50mhz_in => filter_cnt[25].CLK
-clk_50mhz_in => filter_cnt[26].CLK
-clk_50mhz_in => filter_cnt[27].CLK
-clk_50mhz_in => filter_cnt[28].CLK
-clk_50mhz_in => filter_cnt[29].CLK
-clk_50mhz_in => filter_cnt[30].CLK
-clk_50mhz_in => filter_cnt[31].CLK
-sig_in => always0.IN1
-sig_in => filter.DATAB
-sig_out <= filter.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |top|heartbeat:hb

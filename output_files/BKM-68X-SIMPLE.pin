@@ -79,7 +79,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : 7         :        :                   :      
 vsync_in                     : 8         : input  : 2.5 V Schmitt Trigger :         : 1A        : Y              
 VCCIO1A                      : 9         : power  :                   : 2.5V    : 1A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 10        :        :                   :         : 1A        :                
-led3                         : 11        : output : 2.5 V             :         : 1A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 11        :        :                   :         : 1A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 12        :        :                   :         : 1A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 13        :        :                   :         : 1A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 14        :        :                   :         : 1A        :                
@@ -106,21 +106,21 @@ VCCA2                        : 34        : power  :                   : 3.0V/3.3
 VCCA1                        : 35        : power  :                   : 3.0V/3.3V :           :                
 VCC_ONE                      : 36        : power  :                   : 3.0V/3.3V :           :                
 VCC_ONE                      : 37        : power  :                   : 3.0V/3.3V :           :                
-dip2                         : 38        : input  : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 38        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 39        :        :                   :         : 3         :                
 VCCIO3                       : 40        : power  :                   : 2.5V    : 3         :                
 back_button1                 : 41        : input  : 2.5 V Schmitt Trigger :         : 3         : Y              
 GND                          : 42        : gnd    :                   :         :           :                
 back_button2                 : 43        : input  : 2.5 V Schmitt Trigger :         : 3         : Y              
 rgb_comp_x                   : 44        : output : 2.5 V             :         : 3         : Y              
-led5                         : 45        : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 45        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 46        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 47        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 48        :        :                   :         : 3         :                
 VCCIO3                       : 49        : power  :                   : 2.5V    : 3         :                
 hd_sd_x                      : 50        : output : 2.5 V             :         : 3         : Y              
 VCC_ONE                      : 51        : power  :                   : 3.0V/3.3V :           :                
-led4                         : 52        : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 52        :        :                   :         : 3         :                
 GND                          : 53        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 54        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 55        :        :                   :         : 3         :                
@@ -133,7 +133,7 @@ video_oe_x                   : 61        : output : 2.5 V             :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : 62        :        :                   :         : 4         :                
 GND                          : 63        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 64        :        :                   :         : 4         :                
-dip1                         : 65        : input  : 2.5 V             :         : 4         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 65        :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 66        :        :                   :         : 4         :                
 VCCIO4                       : 67        : power  :                   : 2.5V    : 4         :                
 GND                          : 68        : gnd    :                   :         :           :                
