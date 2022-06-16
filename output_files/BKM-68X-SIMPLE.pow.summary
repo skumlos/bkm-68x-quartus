@@ -1,12 +1,12 @@
-Power Analyzer Status : Successful - Thu Jul 15 23:54:16 2021
+Power Analyzer Status : Successful - Tue Jun 14 18:47:27 2022
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : BKM-68X-SIMPLE
 Top-level Entity Name : top
 Family : MAX 10
 Device : 10M08SCE144C8G
 Power Models : Final
-Total Thermal Power Dissipation : 181.85 mW
-Core Dynamic Thermal Power Dissipation : 58.00 mW
+Total Thermal Power Dissipation : 182.74 mW
+Core Dynamic Thermal Power Dissipation : 61.83 mW
 Core Static Thermal Power Dissipation : 110.80 mW
-I/O Thermal Power Dissipation : 13.05 mW
+I/O Thermal Power Dissipation : 10.10 mW
 Power Estimation Confidence : Low: user provided insufficient toggle rate data

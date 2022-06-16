@@ -1,2 +1,1 @@
-Warning (10268): Verilog HDL information at polarity_detector.v(21): always construct contains both blocking and non-blocking assignments File: /home/martin/BKM-68X/10M08SCE/hdl/polarity_detector.v Line: 21
-Warning (10268): Verilog HDL information at monitor_interface2.v(287): always construct contains both blocking and non-blocking assignments File: /home/martin/BKM-68X/10M08SCE/hdl/monitor_interface2.v Line: 287
+Warning (10268): Verilog HDL information at polarity_detector.v(25): always construct contains both blocking and non-blocking assignments File: /home/martin/BKM-68X/10M08SCE/hdl/polarity_detector.v Line: 25

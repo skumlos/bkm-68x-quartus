@@ -2,48 +2,108 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'hsync_in'
-Slack : -6.620
-TNS   : -6.620
+Type  : Slow 1200mV 85C Model Setup 'clk_rw'
+Slack : -3.133
+TNS   : -16.864
+
+Type  : Slow 1200mV 85C Model Setup 'polarity_detector:vsync_polarity_detector|cnt_clk_x'
+Slack : -2.116
+TNS   : -9.509
 
 Type  : Slow 1200mV 85C Model Setup 'vsync_in'
-Slack : -5.667
-TNS   : -5.667
+Slack : -1.738
+TNS   : -1.738
 
-Type  : Slow 1200mV 85C Model Setup 'clk_rw'
-Slack : -3.662
-TNS   : -14.431
+Type  : Slow 1200mV 85C Model Setup 'hsync_in'
+Slack : -0.854
+TNS   : -0.854
+
+Type  : Slow 1200mV 85C Model Setup 'polarity_detector:hsync_polarity_detector|cnt_clk_x'
+Slack : -0.671
+TNS   : -2.000
 
 Type  : Slow 1200mV 85C Model Setup 'clk_in'
-Slack : 0.864
+Slack : 0.114
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'clk_rw'
-Slack : 0.344
+Type  : Slow 1200mV 85C Model Setup 'video_format_detector:vf_det|Clock_divider:clk25mhz|clock_out'
+Slack : 5.244
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'polarity_detector:hsync_polarity_detector|Clock_divider:clkdiv|clock_out'
+Slack : 7.679
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'polarity_detector:vsync_polarity_detector|Clock_divider:clkdiv|clock_out'
+Slack : 8.722
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'polarity_detector:hsync_polarity_detector|cnt_clk_x'
+Slack : 0.340
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk_in'
 Slack : 0.360
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'vsync_in'
-Slack : 9.374
+Type  : Slow 1200mV 85C Model Hold 'polarity_detector:hsync_polarity_detector|Clock_divider:clkdiv|clock_out'
+Slack : 0.360
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'clk_rw'
+Slack : 0.361
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'polarity_detector:vsync_polarity_detector|Clock_divider:clkdiv|clock_out'
+Slack : 0.362
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'polarity_detector:vsync_polarity_detector|cnt_clk_x'
+Slack : 0.394
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'video_format_detector:vf_det|Clock_divider:clk25mhz|clock_out'
+Slack : 0.712
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'hsync_in'
-Slack : 10.676
+Slack : 9.336
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'vsync_in'
+Slack : 9.482
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'clk_rw'
-Slack : 4.808
+Slack : 4.862
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'video_format_detector:vf_det|Clock_divider:clk25mhz|clock_out'
+Slack : 5.993
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'video_format_detector:vf_det|Clock_divider:clk25mhz|clock_out'
+Slack : 3.230
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'clk_rw'
-Slack : 11.902
+Slack : 11.937
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_in'
-Slack : 4.636
+Slack : 4.643
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'polarity_detector:vsync_polarity_detector|cnt_clk_x'
+Slack : 4.733
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'polarity_detector:hsync_polarity_detector|cnt_clk_x'
+Slack : 4.756
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'video_format_detector:vf_det|Clock_divider:clk25mhz|clock_out'
+Slack : 9.641
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_rw'
@@ -54,52 +114,120 @@ Type  : Slow 1200mV 85C Model Minimum Pulse Width 'hsync_in'
 Slack : 396.000
 TNS   : 0.000
 
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'polarity_detector:hsync_polarity_detector|Clock_divider:clkdiv|clock_out'
+Slack : 499.770
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'polarity_detector:vsync_polarity_detector|Clock_divider:clkdiv|clock_out'
+Slack : 499.771
+TNS   : 0.000
+
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'vsync_in'
 Slack : 996.000
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Setup 'hsync_in'
-Slack : -5.933
-TNS   : -5.933
+Type  : Slow 1200mV 0C Model Setup 'clk_rw'
+Slack : -2.275
+TNS   : -8.418
+
+Type  : Slow 1200mV 0C Model Setup 'polarity_detector:vsync_polarity_detector|cnt_clk_x'
+Slack : -1.467
+TNS   : -6.279
 
 Type  : Slow 1200mV 0C Model Setup 'vsync_in'
-Slack : -5.016
-TNS   : -5.016
+Slack : -1.052
+TNS   : -1.052
 
-Type  : Slow 1200mV 0C Model Setup 'clk_rw'
-Slack : -2.761
-TNS   : -6.843
+Type  : Slow 1200mV 0C Model Setup 'polarity_detector:hsync_polarity_detector|cnt_clk_x'
+Slack : -0.187
+TNS   : -0.279
+
+Type  : Slow 1200mV 0C Model Setup 'hsync_in'
+Slack : -0.154
+TNS   : -0.154
 
 Type  : Slow 1200mV 0C Model Setup 'clk_in'
-Slack : 1.121
+Slack : 0.072
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'video_format_detector:vf_det|Clock_divider:clk25mhz|clock_out'
+Slack : 5.343
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'polarity_detector:hsync_polarity_detector|Clock_divider:clkdiv|clock_out'
+Slack : 7.783
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'polarity_detector:vsync_polarity_detector|Clock_divider:clkdiv|clock_out'
+Slack : 8.714
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'polarity_detector:hsync_polarity_detector|cnt_clk_x'
+Slack : 0.304
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk_rw'
-Slack : 0.308
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'clk_in'
 Slack : 0.322
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'vsync_in'
-Slack : 8.630
+Type  : Slow 1200mV 0C Model Hold 'clk_in'
+Slack : 0.323
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'polarity_detector:hsync_polarity_detector|Clock_divider:clkdiv|clock_out'
+Slack : 0.323
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'polarity_detector:vsync_polarity_detector|Clock_divider:clkdiv|clock_out'
+Slack : 0.325
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'polarity_detector:vsync_polarity_detector|cnt_clk_x'
+Slack : 0.352
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'video_format_detector:vf_det|Clock_divider:clk25mhz|clock_out'
+Slack : 0.671
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'hsync_in'
-Slack : 9.799
+Slack : 8.544
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'vsync_in'
+Slack : 8.668
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'clk_rw'
-Slack : 4.774
+Slack : 4.831
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'video_format_detector:vf_det|Clock_divider:clk25mhz|clock_out'
+Slack : 6.252
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'video_format_detector:vf_det|Clock_divider:clk25mhz|clock_out'
+Slack : 2.936
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'clk_rw'
-Slack : 11.937
+Slack : 11.991
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_in'
-Slack : 4.593
+Slack : 4.600
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'polarity_detector:vsync_polarity_detector|cnt_clk_x'
+Slack : 4.672
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'polarity_detector:hsync_polarity_detector|cnt_clk_x'
+Slack : 4.720
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'video_format_detector:vf_det|Clock_divider:clk25mhz|clock_out'
+Slack : 9.658
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_rw'
@@ -110,60 +238,136 @@ Type  : Slow 1200mV 0C Model Minimum Pulse Width 'hsync_in'
 Slack : 396.000
 TNS   : 0.000
 
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'polarity_detector:hsync_polarity_detector|Clock_divider:clkdiv|clock_out'
+Slack : 499.773
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'polarity_detector:vsync_polarity_detector|Clock_divider:clkdiv|clock_out'
+Slack : 499.778
+TNS   : 0.000
+
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'vsync_in'
 Slack : 996.000
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Setup 'hsync_in'
-Slack : -1.539
-TNS   : -1.539
-
-Type  : Fast 1200mV 0C Model Setup 'vsync_in'
-Slack : -1.174
-TNS   : -1.174
-
-Type  : Fast 1200mV 0C Model Setup 'clk_rw'
-Slack : 1.500
+Type  : Fast 1200mV 0C Model Setup 'clk_in'
+Slack : 1.334
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Setup 'clk_in'
-Slack : 3.268
+Type  : Fast 1200mV 0C Model Setup 'clk_rw'
+Slack : 1.776
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'polarity_detector:vsync_polarity_detector|cnt_clk_x'
+Slack : 1.859
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'polarity_detector:hsync_polarity_detector|cnt_clk_x'
+Slack : 2.509
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'hsync_in'
+Slack : 3.841
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'vsync_in'
+Slack : 3.865
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'video_format_detector:vf_det|Clock_divider:clk25mhz|clock_out'
+Slack : 8.182
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'polarity_detector:hsync_polarity_detector|Clock_divider:clkdiv|clock_out'
+Slack : 9.020
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'polarity_detector:vsync_polarity_detector|Clock_divider:clkdiv|clock_out'
+Slack : 9.505
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'polarity_detector:hsync_polarity_detector|cnt_clk_x'
+Slack : 0.144
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk_rw'
-Slack : 0.143
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'clk_in'
 Slack : 0.150
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'vsync_in'
-Slack : 4.596
+Type  : Fast 1200mV 0C Model Hold 'clk_in'
+Slack : 0.151
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'polarity_detector:hsync_polarity_detector|Clock_divider:clkdiv|clock_out'
+Slack : 0.151
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'polarity_detector:vsync_polarity_detector|Clock_divider:clkdiv|clock_out'
+Slack : 0.152
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'polarity_detector:vsync_polarity_detector|cnt_clk_x'
+Slack : 0.166
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'video_format_detector:vf_det|Clock_divider:clk25mhz|clock_out'
+Slack : 0.243
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'hsync_in'
-Slack : 5.247
+Slack : 4.634
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'vsync_in'
+Slack : 4.691
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'clk_rw'
-Slack : 6.300
+Slack : 6.320
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'video_format_detector:vf_det|Clock_divider:clk25mhz|clock_out'
+Slack : 8.107
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'video_format_detector:vf_det|Clock_divider:clk25mhz|clock_out'
+Slack : 1.418
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'clk_rw'
-Slack : 11.397
+Slack : 11.407
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_in'
 Slack : 4.419
 TNS   : 0.000
 
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'polarity_detector:vsync_polarity_detector|cnt_clk_x'
+Slack : 4.724
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'polarity_detector:hsync_polarity_detector|cnt_clk_x'
+Slack : 4.729
+TNS   : 0.000
+
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_rw'
-Slack : 9.418
+Slack : 9.419
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'video_format_detector:vf_det|Clock_divider:clk25mhz|clock_out'
+Slack : 9.742
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'hsync_in'
 Slack : 396.000
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'polarity_detector:vsync_polarity_detector|Clock_divider:clkdiv|clock_out'
+Slack : 499.740
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'polarity_detector:hsync_polarity_detector|Clock_divider:clkdiv|clock_out'
+Slack : 499.744
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'vsync_in'

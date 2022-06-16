@@ -90,7 +90,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : 17        :        :                   :      
 ~ALTERA_TDI~ / RESERVED_INPUT_WITH_WEAK_PULLUP : 19        : input  : 2.5 V Schmitt Trigger :         : 1B        : N              
 ~ALTERA_TDO~                 : 20        : output : 2.5 V             :         : 1B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 21        :        :                   :         : 1B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 22        :        :                   :         : 1B        :                
+hd_sd_x                      : 22        : output : 2.5 V             :         : 1B        : N              
 VCCIO1B                      : 23        : power  :                   : 2.5V    : 1B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 24        :        :                   :         : 1B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 25        :        :                   :         : 1B        :                
@@ -101,7 +101,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : 29        :        :                   :      
 int_ext_x                    : 30        : output : 2.5 V             :         : 2         : Y              
 VCCIO2                       : 31        : power  :                   : 2.5V    : 2         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 32        :        :                   :         : 2         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : 33        :        :                   :         : 2         :                
+norm_y_g                     : 33        : output : 2.5 V             :         : 2         : Y              
 VCCA2                        : 34        : power  :                   : 3.0V/3.3V :           :                
 VCCA1                        : 35        : power  :                   : 3.0V/3.3V :           :                
 VCC_ONE                      : 36        : power  :                   : 3.0V/3.3V :           :                
@@ -109,16 +109,16 @@ VCC_ONE                      : 37        : power  :                   : 3.0V/3.3
 RESERVED_INPUT_WITH_WEAK_PULLUP : 38        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 39        :        :                   :         : 3         :                
 VCCIO3                       : 40        : power  :                   : 2.5V    : 3         :                
-back_button1                 : 41        : input  : 2.5 V Schmitt Trigger :         : 3         : Y              
+back_button2                 : 41        : input  : 2.5 V Schmitt Trigger :         : 3         : Y              
 GND                          : 42        : gnd    :                   :         :           :                
-back_button2                 : 43        : input  : 2.5 V Schmitt Trigger :         : 3         : Y              
+back_button1                 : 43        : input  : 2.5 V Schmitt Trigger :         : 3         : Y              
 rgb_comp_x                   : 44        : output : 2.5 V             :         : 3         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : 45        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 46        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 47        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 48        :        :                   :         : 3         :                
 VCCIO3                       : 49        : power  :                   : 2.5V    : 3         :                
-hd_sd_x                      : 50        : output : 2.5 V             :         : 3         : Y              
+vsync_discrete_in            : 50        : input  : 2.5 V Schmitt Trigger :         : 3         : Y              
 VCC_ONE                      : 51        : power  :                   : 3.0V/3.3V :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 52        :        :                   :         : 3         :                
 GND                          : 53        : gnd    :                   :         :           :                

@@ -88,7 +88,6 @@ set_location_assignment PIN_127 -to vsync_out
 set_location_assignment PIN_131 -to hsync_out
 set_location_assignment PIN_61 -to video_oe_x
 set_location_assignment PIN_44 -to rgb_comp_x
-set_location_assignment PIN_50 -to hd_sd_x
 set_location_assignment PIN_30 -to int_ext_x
 set_location_assignment PIN_6 -to hsync_in
 set_location_assignment PIN_8 -to vsync_in
@@ -103,7 +102,6 @@ set_instance_assignment -name IO_STANDARD "2.5 V SCHMITT TRIGGER" -to back_butto
 set_location_assignment PIN_33 -to norm_y_g
 set_instance_assignment -name SLEW_RATE 0 -to norm_y_g
 set_instance_assignment -name SLEW_RATE 0 -to int_ext_x
-set_instance_assignment -name SLEW_RATE 0 -to hd_sd_x
 set_instance_assignment -name SLEW_RATE 0 -to led1
 set_instance_assignment -name SLEW_RATE 0 -to led2
 set_instance_assignment -name SLEW_RATE 0 -to rgb_comp_x
@@ -119,4 +117,8 @@ set_global_assignment -name VERILOG_FILE hdl/heartbeat.v
 set_global_assignment -name VERILOG_FILE hdl/top.v
 set_global_assignment -name SOURCE_FILE "db/BKM-68X-SIMPLE.cmp.rdb"
 set_global_assignment -name VERILOG_FILE hdl/signal_detector.v
+set_location_assignment PIN_50 -to vsync_discrete_in
+set_instance_assignment -name SLEW_RATE 0 -to vsync_discrete_in
+set_instance_assignment -name IO_STANDARD "2.5 V SCHMITT TRIGGER" -to vsync_discrete_in
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to vsync_discrete_in
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
